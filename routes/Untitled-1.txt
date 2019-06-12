@@ -1,0 +1,83 @@
+
+   
+     
+     
+       
+           
+      
+  
+        if data['isControlPerson'] == "YES":
+            self.disclosures.update({"companySymbols":"GooG"})          
+        if data['isPoliticallyExposed'] == "YES":
+            politicalExposureDetail = {
+                "immediateFamily":"data.immediateFamily",
+                "politicalOrganization":"data.politicalOrganization"
+            }
+            self.disclosures.update({"politicalExposureDetail":politicalExposureDetail})
+        if data['isAffiliatedExchangeOrFINRA'] =="YES":
+           self.disclosures.update({"firmName":"data.firmName"})
+           self.disclosures.update({"affiliatedApproval":["affiliatedApproval"]})    
+        self.identity = {
+        "dateOfBirth": "1978-06-10",
+        "citizenshipCountry": "USA",
+        "socialSecurityNumber": "666-00-1945",
+        "name": {
+            "givenName": "0TestUser0",
+            "familyName": "0Smith0",
+            "legalName": "0TestUser0 0Smith0"
+            }
+            }
+
+        self.contact ={
+        "phoneNumbers": [
+            {
+            "phoneNumberType": "MOBILE",
+            "phoneNumber": "2148675309"
+            }                
+            ],
+        "homeAddress": {
+        "postalCode": "94558",
+        "city": "Napa",
+        "streetAddress": [
+        "10 South Waverly St."
+        ],
+        "state": "CA",
+        "country":"USA"
+        }
+            }
+        self.employment = {
+        "employmentStatus": "EMPLOYED",
+        "employer": "Apex Clearing Corporation",
+        "positionEmployed": "Programmer" 
+            }
+
+
+        self.form = {
+        "modifyType": "CREATE",
+        "repCode": "ZXB",
+        "branch": "8IB",
+        "forms": [{
+        "formId":self.formId,
+        "formSchemaHash":self.formSchemaHash,
+        "jsonData":{
+        "accountType": "CASH",
+        "customerType": "INDIVIDUAL",
+        "applicantSignature":self.applicantSignature,
+        "suitabilityProfile":self.suitabilityProfile,
+        "investmentProfile":self.investmentProfile,
+        "tradeAuthorization":self.tradeAuthorization,
+        "applicants": [{
+       "disclosures":self.disclosures,
+       "identity":self.identity,
+       "contact":self.contact,
+       "employment":self.employment
+             }]
+            }
+         }]
+        } 
+        return self.form
+
+       
+        
+         
+                        

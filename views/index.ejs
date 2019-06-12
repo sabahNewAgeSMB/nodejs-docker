@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      var count = 0;
+    $(document).ready(function(){
+  $("#btn1").click(function(){
+    count = count+1;
+    $("#count").text(count);
+    
+  });
+  $("#btn2").click(function(){
+    count = count-1;
+    if(count>0){
+      $("#count").text(count);
+    }else{
+      $("#count").text(0);
+    }
+    
+  });
+  $("#btn3").click(function(){
+    $("#count").text(0);
+  });
+});
+    </script>
+  </head>
+  <body>
+    <div style="margin-top:150px;" align="center">
+        <h1 id="count" style="font-size:100px;">0</h1>
+      <button id="btn1" class="btn btn-info" style="width:62px;">+</button>
+      <button id="btn2" class="btn btn-info" style="width:62px;">-</button>
+      <button id="btn3" class="btn btn-info" style="width:62px;">Reset</button>
+      </div>
+  </body>
+</html>
