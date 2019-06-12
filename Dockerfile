@@ -1,6 +1,6 @@
 FROM node:10-alpine
 
-WORKDIR /home/test
+WORKDIR /home/node_app
 
 COPY package*.json ./
 RUN npm install
